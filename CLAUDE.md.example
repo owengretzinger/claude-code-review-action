@@ -1,0 +1,47 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code when working with code in this repository.
+
+## Build & Run Commands
+
+```bash
+npm run dev        # Start development server
+npm run build      # Build for production
+npm run test       # Run tests
+npm run lint       # Run linter
+```
+
+## Code Style
+
+- Use TypeScript strict mode
+- Prefer `const` over `let`, avoid `var`
+- Use async/await over raw Promises or callbacks
+- Use early returns to reduce nesting
+- Keep functions under 50 lines when possible
+
+## Naming Conventions
+
+- **Files**: kebab-case (e.g., `user-service.ts`)
+- **Classes**: PascalCase (e.g., `UserService`)
+- **Functions/variables**: camelCase (e.g., `getUserById`)
+- **Constants**: SCREAMING_SNAKE_CASE (e.g., `MAX_RETRIES`)
+- **Booleans**: prefix with `is`, `has`, `should` (e.g., `isActive`, `hasPermission`)
+
+## Error Handling
+
+- Always use typed errors, never throw generic `Error`
+- Log errors with context (user ID, request ID, etc.)
+- Return meaningful error messages to clients
+
+## Testing
+
+- Write unit tests for all business logic
+- Use descriptive test names: `should return user when valid ID provided`
+- Mock external dependencies
+
+## Security
+
+- Never commit secrets or API keys
+- Validate all user input
+- Use parameterized queries for database operations
+- Sanitize data before rendering in HTML
